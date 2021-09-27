@@ -1,5 +1,14 @@
 class User < ApplicationRecord
 
   validates :name, presence: true
-  validates :password, presence: true
+  validate :password_should_be_strong
+
+  private
+
+  def password_should_be_strong
+    count = StrongPasswordCharacterChangeCounter.new(password).call
+    if count > 0
+      errors.add(:password, :change_count_for_strong_password, name: name, count: count)
+    end
+  end
 end

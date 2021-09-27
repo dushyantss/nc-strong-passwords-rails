@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          change_count_for_strong_password:
+            one: Change 1 character of %{name}'s password
+            other: Change %{count} characters of %{name}'s password
