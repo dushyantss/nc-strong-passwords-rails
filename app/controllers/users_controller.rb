@@ -4,11 +4,7 @@ class UsersController < ApplicationController
   end
 
   def bulk_upload
-    @results = []
-    CSV.foreach(bulk_upload_file.path, headers: true) do |row|
-      @results << User.create(row)
-    end
-
+    @results = UsersBulkUploader.new(bulk_upload_file).call
     render :index
   end
 
