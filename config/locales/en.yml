@@ -37,3 +37,6 @@ en:
           change_count_for_strong_password:
             one: Change 1 character of %{name}'s password
             other: Change %{count} characters of %{name}'s password
+  helpers:
+    users:
+      user_successfully_created: "%{name} was successfully saved"

@@ -1,0 +1,13 @@
+<h1>Upload Users</h1>
+<%= form_with url: bulk_upload_path do |f| %>
+  <%= f.label :file, "Bulk upload users" %>
+  <%= f.file_field :file, name: :file %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<h2>Results from previous upload</h2>
+<ol>
+  <% @results.each do |user| %>
+   <li><%= user_upload_result(user) %></li>
+  <% end %>
+</ol>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   def password_should_be_strong
     count = StrongPasswordCharacterChangeCounter.new(password).call
     if count > 0
-      errors.add(:password, :change_count_for_strong_password, name: name, count: count)
+      errors.add(:password, :change_count_for_strong_password, name: name || "User", count: count)
     end
   end
 end
