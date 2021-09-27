@@ -52,3 +52,19 @@ You do not need to make the website look pretty. Do not use any front-end framew
 
 Once you’re finished, please host the app on Heroku or similar so that our colleagues can look at it and please also send us the link to your github repository.
 
+## Basic Commands
+### Server setup
+```
+bundle install
+bin/rails db:create
+bin/rails db:migrate
+```
+### Run tests
+```
+bin/rspec
+```
+
+### Run server
+```
+bin/rails s
+```
